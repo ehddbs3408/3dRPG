@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     //animator
     Animator _anim;
+    
 
     Define.State _state = Define.State.Idle;
     Vector3 _destPos;
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
             prefab = Managers.Resource.Instantiate("Knight");
         if (Input.GetKeyDown(KeyCode.V))
             Managers.Resource.Destroy(prefab);
+        if (Input.GetKeyDown(KeyCode.F))
+            Managers.Sound.Play("Sounds/Player/univ0001");
     }
 
     private void Update()

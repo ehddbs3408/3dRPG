@@ -8,10 +8,18 @@ public class Managers : MonoBehaviour
     static Managers Instance { get { Init();  return instance; } }
 
     #region CORE
+    //Managers
     InputManager _input = new InputManager();
+    SoundManager _sound = new SoundManager();
     ResourceManager _resource = new ResourceManager();
+    SceneManagerEX _scene = new SceneManagerEX();
+
+    //Property
     public static InputManager Input { get { return Instance._input; } }
+    public static SoundManager Sound { get { return Instance._sound; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
+    public static SceneManagerEX Scene { get { return Instance._scene; } }
+
     #endregion
     private void Start()
     {
@@ -35,6 +43,14 @@ public class Managers : MonoBehaviour
             }
             DontDestroyOnLoad(go);
             instance = go.GetComponent<Managers>();
+
+            instance._sound.Init();
         }
+    }
+
+    public static void Clear()
+    {
+        Scene.Clear();
+        Input.Clear();
     }
 }
