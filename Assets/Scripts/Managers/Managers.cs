@@ -14,6 +14,7 @@ public class Managers : MonoBehaviour
     SoundManager _sound = new SoundManager();
     ResourceManager _resource = new ResourceManager();
     SceneManagerEX _scene = new SceneManagerEX();
+    PoolManager _pool = new PoolManager();
 
     //Property
     public static DataManager Data { get { return Instance._data; } }
@@ -21,6 +22,7 @@ public class Managers : MonoBehaviour
     public static SoundManager Sound { get { return Instance._sound; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static SceneManagerEX Scene { get { return Instance._scene; } }
+    public static PoolManager Pool { get { return Instance._pool; } }
 
     #endregion
     private void Start()
@@ -48,6 +50,7 @@ public class Managers : MonoBehaviour
 
             instance._sound.Init();
             instance._data.Init();
+            instance._pool.Init();
         }
     }
 
@@ -55,5 +58,7 @@ public class Managers : MonoBehaviour
     {
         Scene.Clear();
         Input.Clear();
+
+        Pool.Clear(); //항상 마지막에 클리어
     }
 }
