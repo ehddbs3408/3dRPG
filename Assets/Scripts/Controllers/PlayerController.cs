@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.Space))
-            prefab = Managers.Resource.Instantiate("Knight");
+            Managers.UI.ShowPopuoUI<UI_Button>();
         if (Input.GetKeyDown(KeyCode.V))
-            Managers.Resource.Destroy(prefab);
+            Managers.UI.ClosePopupUI();
         if (Input.GetKeyDown(KeyCode.F))
             Managers.Sound.Play("Sounds/Player/univ0001");
     }

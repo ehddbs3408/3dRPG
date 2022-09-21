@@ -9,6 +9,7 @@ public class Managers : MonoBehaviour
 
     #region CORE
     //Managers
+    UIManager _ui = new UIManager();
     DataManager _data = new DataManager();
     InputManager _input = new InputManager();
     SoundManager _sound = new SoundManager();
@@ -17,6 +18,7 @@ public class Managers : MonoBehaviour
     PoolManager _pool = new PoolManager();
 
     //Property
+    public static UIManager UI { get { return Instance._ui; } }
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance._input; } }
     public static SoundManager Sound { get { return Instance._sound; } }
