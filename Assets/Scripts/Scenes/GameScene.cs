@@ -12,16 +12,16 @@ public class GameScene : BaseScene
 
         Dictionary<int, Stat> dict = Managers.Data.StatDict;
 
-        //GameObject go = Managers.Resource.Load<GameObject>("Prefabs/Knight");
-        //Managers.Pool.CreatePool(go, 10);
+        GameObject go = Managers.Resource.Load<GameObject>("Prefabs/Knight");
+        Managers.Pool.CreatePool(go, 10);
 
-        //Poolable po = Managers.Pool.Pop(go);
+        Poolable po = Managers.Pool.Pop(go);
 
-        //List<GameObject> list = new List<GameObject>();
-        //for(int i = 0; i<10;i++)
-        //{
-        //    list.Add(Managers.Resource.Instantiate("Knight"));
-        //}
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i < 10; i++)
+        {
+            list.Add(Managers.Resource.Instantiate("Knight"));
+        }
 
         //for(int i = 0;i<10;i++)
         //{
