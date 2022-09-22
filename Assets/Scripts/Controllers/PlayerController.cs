@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
         Managers.Input.keyAction += Onkeyborad;
         Managers.Input.MouseAction -= OnMouseClicked;
         Managers.Input.MouseAction += OnMouseClicked;
+
+        if (gameObject.GetComponentInChildren<UI_Base>() == null)
+            Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
     }
     GameObject prefab = null;
     private void Onkeyborad()
