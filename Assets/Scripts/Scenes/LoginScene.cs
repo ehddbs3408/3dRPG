@@ -10,13 +10,15 @@ public class LoginScene : BaseScene
 
         SceneType = Define.Scene.Login;
     }
+
     public override void Clear()
     {
         Debug.Log("LoginScene Clear!");
     }
-    private void Update()
+
+    void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if( Input.GetKeyDown(KeyCode.Q))
         {
             Managers.Scene.LoadScene(Define.Scene.Game);
         }

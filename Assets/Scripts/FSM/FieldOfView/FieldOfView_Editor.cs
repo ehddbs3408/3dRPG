@@ -14,14 +14,14 @@ public class FieldOfView_Editor : Editor
         Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.eyeRadius);
 
         float degrees = (fov.eyeAngle / 2) + fov.transform.eulerAngles.y;
-        float angleX = Mathf.Sin(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
-        float angleZ = Mathf.Cos(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
-        Vector3 vecRight = new Vector3(angleX, 0, angleZ);
+        float AngleX = Mathf.Sin(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
+        float AngleZ = Mathf.Cos(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
+        Vector3 vecRight = new Vector3(AngleX, 0, AngleZ);
 
         degrees = (-fov.eyeAngle / 2) + fov.transform.eulerAngles.y;
-        angleX = Mathf.Sin(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
-        angleZ = Mathf.Cos(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
-        Vector3 vecLeft = new Vector3(angleX, 0, angleZ);
+        AngleX = Mathf.Sin(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
+        AngleZ = Mathf.Cos(degrees * Mathf.Deg2Rad) * fov.eyeRadius;
+        Vector3 vecLeft = new Vector3(AngleX, 0, AngleZ);
 
         Handles.DrawLine(fov.transform.position, fov.transform.position + vecRight);
         Handles.DrawLine(fov.transform.position, fov.transform.position + vecLeft);
@@ -33,11 +33,9 @@ public class FieldOfView_Editor : Editor
         }
 
         Handles.color = Color.green;
-        if(fov.FirstTarget)
+        if( fov.FirstTarget )
         {
             Handles.DrawLine(fov.transform.position, fov.FirstTarget.position);
         }
     }
-
-
 }

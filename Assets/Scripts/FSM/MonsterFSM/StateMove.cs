@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class StateMove : State<MonsterFSM>
+public class stateMove : State<MonsterFSM>
 {
     private Animator animator;
     private CharacterController characterController;
@@ -11,7 +11,7 @@ public class StateMove : State<MonsterFSM>
 
     private int hashMove = Animator.StringToHash("Move");
     private int hashAttack = Animator.StringToHash("Attack");
-    private int hashTraget = Animator.StringToHash("Target");
+    private int hashTarget = Animator.StringToHash("Target");
     private int hashMoveSpeed = Animator.StringToHash("MoveSpeed");
 
     public override void OnAwake()
@@ -31,23 +31,23 @@ public class StateMove : State<MonsterFSM>
     {
         Transform target = stateMachineClass.SearchEnemy();
 
-        if(target)
+        if( target )
         {
             agent.SetDestination(stateMachineClass.target.position);
 
-            if(agent.remainingDistance > agent.stoppingDistance)
+            if( agent.remainingDistance > agent.stoppingDistance )
             {
                 characterController.Move(agent.velocity * deltaTime);
                 animator.SetFloat(hashMoveSpeed, agent.velocity.magnitude / agent.speed, 0.1f, deltaTime);
             }
             else
             {
-                stateMachine.ChangeState<StateIdle>();
+                stateMachine.ChangeState<stateIdle>();
             }
         }
         else
         {
-            stateMachine.ChangeState<StateIdle>();
+            stateMachine.ChangeState<stateIdle>();
         }
     }
 

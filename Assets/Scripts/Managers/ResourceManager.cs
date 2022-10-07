@@ -21,10 +21,10 @@ public class ResourceManager
         return Resources.Load<T>(path);
     }
 
-    public GameObject Instantiate(string path,Transform parent = null)
+    public GameObject Instantiate(string path, Transform parent = null)
     {
         GameObject original = Load<GameObject>($"Prefabs/{path}");
-        if(original == null)
+        if(original == null )
         {
             Debug.Log($"Failed to load prefab : {path}");
             return null;
@@ -44,7 +44,7 @@ public class ResourceManager
             return;
 
         Poolable poolable = go.GetComponent<Poolable>();
-        if(poolable != null)
+        if(poolable != null )
         {
             Managers.Pool.Push(poolable);
             return;
@@ -52,4 +52,5 @@ public class ResourceManager
 
         Object.Destroy(go);
     }
+
 }

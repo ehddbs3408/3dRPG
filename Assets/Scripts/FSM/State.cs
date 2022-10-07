@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class State<T>
 {
-    protected StateMachine<T> stateMachine; //state관리 머신 클래스
-    protected T stateMachineClass;  //gameobject 클래스
+    protected StateMachine<T> stateMachine;     // State 관리하는 머신 클래스
+    protected T stateMachineClass;              // gameObject 클래스
 
     public State() { }
 

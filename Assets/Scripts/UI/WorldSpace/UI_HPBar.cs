@@ -9,15 +9,19 @@ public class UI_HPBar : UI_Base
     {
         HPBar,
     }
+
     public override void Init()
     {
         Bind<Slider>(typeof(Sliders));
+        SetHpRatio(1);
     }
-    private void Update()
+
+    void Update()
     {
         Transform parent = transform.parent;
         transform.position = parent.position + Vector3.up * (parent.GetComponent<Collider>().bounds.size.y);
         transform.rotation = Camera.main.transform.rotation;
+
     }
 
     public void SetHpRatio(float ratio)

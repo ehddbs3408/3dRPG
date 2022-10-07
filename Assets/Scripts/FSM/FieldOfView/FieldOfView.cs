@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,33 +7,35 @@ public class FieldOfView : MonoBehaviour
     [Header("Sight Elements")]
     public float eyeRadius = 5f;
 
-    [Range(0,360)]
+    [Range(0, 360)]
     public float eyeAngle = 90f;
 
     [Header("Search Elements")]
     public float delayFindTime = 0.2f;
-
-    public LayerMask targetMask;
-    public LayerMask blockMask;
+    
+    public LayerMask targetLayerMask;
+    public LayerMask blockLayerMask;
 
     private List<Transform> targetLists = new List<Transform>();
     private Transform firstTarget;
-    private float distanceTraget = 0.0f;
+    private float distanceTarget = 0.0f;
 
     public List<Transform> TargetLists => targetLists;
     public Transform FirstTarget => firstTarget;
-    public float DistanceTarget => distanceTraget;
+    public float DistanceTarget => distanceTarget;
 
-    private void Start()
+
+    void Start()
     {
-        StartCoroutine("UpdateFindTarget",delayFindTime);
-    }
-    private void Update()
-    {
-        FindTargets();
+        StartCoroutine("UpdateFindTargets", delayFindTime);
     }
 
-    IEnumerator UpdateFindTarget(float delay)
+    void Update()
+    {
+        //FindTargets();
+    }
+
+    IEnumerator UpdateFindTargets(float delay)
     {
         while(true)
         {
@@ -43,37 +44,37 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    private void FindTargets()
+    void FindTargets()
     {
-        //init
-        distanceTraget = 0.0f;
+        // Init
+        distanceTarget = 0.0f;
         firstTarget = null;
         targetLists.Clear();
 
-        Collider[] overlapSphereTargets =
-        Physics.OverlapSphere(transform.position, eyeRadius, targetMask);
+        Collider[] overlapSphereTargets = Physics.OverlapSphere(transform.position, eyeRadius, targetLayerMask);
 
-        for(int i = 0;i<overlapSphereTargets.Length;i++)
+        for(int i =0; i < overlapSphereTargets.Length; ++i)
         {
             Transform target = overlapSphereTargets[i].transform;
             Vector3 LookAtTarget = (target.position - transform.position).normalized;
 
-            if(Vector3.Angle(transform.forward,LookAtTarget) < eyeAngle/2)
+            if( Vector3.Angle(transform.forward, LookAtTarget) < eyeAngle/2 )
             {
                 float firstTargetDistance = Vector3.Distance(transform.position, target.position);
 
-                //적과 나 사이 방해물이 없는지
-                if(Physics.Raycast(transform.position,LookAtTarget,firstTargetDistance,blockMask) == false)
+                // 적과 나 사이에 장애물이 없는지 확인
+                if (!Physics.Raycast(transform.position, LookAtTarget, firstTargetDistance, blockLayerMask))
                 {
                     targetLists.Add(target);
 
-                    if (firstTarget == null || (distanceTraget > firstTargetDistance))
+                    if (firstTarget == null || (distanceTarget > firstTargetDistance))
                     {
                         firstTarget = target;
-                        distanceTraget = firstTargetDistance;
+                        distanceTarget = firstTargetDistance;
                     }
                 }
             }
         }
+
     }
 }

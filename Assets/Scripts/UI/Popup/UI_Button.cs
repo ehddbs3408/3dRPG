@@ -34,15 +34,15 @@ public class UI_Button : UI_Popup
         AddUIEvent(goBT, OnPointButtonClicked, Define.UIEvent.Click);
 
         GameObject goIM = GetImage((int)Images.ItemImage).gameObject;
-        AddUIEvent(goIM, ((PointerEventData data) =>
-         {
-             goIM.transform.position = data.position;
-         }),Define.UIEvent.Drag);
+        AddUIEvent(goIM, ((PointerEventData data) => { goIM.transform.position = data.position; }), Define.UIEvent.Drag);
+
     }
-    int _socre = 0;
+
+    int _score = 0;
     public void OnPointButtonClicked(PointerEventData data)
     {
-        _socre++;
-        GetText((int)Texts.ScoreText).text = $"점수 : {_socre}";
+        _score++;
+        GetText((int)Texts.ScoreText).text = $"점수:{_score}";
     }
+    
 }

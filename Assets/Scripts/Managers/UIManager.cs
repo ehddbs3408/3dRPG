@@ -20,13 +20,13 @@ public class UIManager
         }
     }
 
-    public void SetCanvas(GameObject go,bool sort=true)
+    public void SetCanvas(GameObject go, bool sort = true)
     {
         Canvas canvas = Util.GetOrAddComponent<Canvas>(go);
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.overrideSorting = true;
 
-        if(sort)
+        if( sort )
         {
             canvas.sortingOrder = _order;
             _order++;
@@ -37,7 +37,7 @@ public class UIManager
         }
     }
 
-    public T MakeWorldSpaceUI<T>(Transform parent = null,string name = null) where T :UI_Base
+    public T MakeWorldSpaceUI<T>(Transform parent = null, string name = null) where T : UI_Base
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
@@ -52,6 +52,7 @@ public class UIManager
 
         return Util.GetOrAddComponent<T>(go);
     }
+
     public T ShowSceneUI<T>(string name = null) where T : UI_Scene
     {
         if (string.IsNullOrEmpty(name))
@@ -63,10 +64,11 @@ public class UIManager
         _sceneUI = sceneUI;
 
         go.transform.parent = Root.transform;
-
+        
         return sceneUI;
     }
-    public T ShowPopuoUI<T>(string name = null) where T : UI_Popup
+
+    public T ShowPopupUI<T>(string name = null) where T : UI_Popup
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
@@ -80,12 +82,13 @@ public class UIManager
 
         return popupUI;
     }
+
     public void ClosePopupUI(UI_Popup popupUI)
     {
         if (_popupStack.Count == 0)
             return;
 
-        if(_popupStack.Peek() != popupUI)
+        if( _popupStack.Peek() != popupUI )
         {
             Debug.Log("Close Popup Failed!");
             return;
@@ -93,6 +96,7 @@ public class UIManager
 
         ClosePopupUI();
     }
+
     public void ClosePopupUI()
     {
         if (_popupStack.Count == 0)
@@ -104,9 +108,10 @@ public class UIManager
 
         _order--;
     }
+
     public void CloseAllPopupUI()
     {
-        while(_popupStack.Count > 0)
+        while(_popupStack.Count > 0 )
         {
             ClosePopupUI();
         }

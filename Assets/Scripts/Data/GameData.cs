@@ -13,11 +13,11 @@ public class Stat
 }
 
 [Serializable]
-public class StatData : ILoader<int,Stat>
+public class StatData : ILoader<int, Stat>
 {
     public List<Stat> stats = new List<Stat>();
 
-    public Dictionary<int,Stat> MakeDictionary()
+    public Dictionary<int, Stat> MakeDict()
     {
         Dictionary<int, Stat> dict = new Dictionary<int, Stat>();
         foreach(Stat stat in stats)
@@ -27,4 +27,5 @@ public class StatData : ILoader<int,Stat>
         return dict;
     }
 }
-#endregion
+
+#endregion // Stat

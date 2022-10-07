@@ -17,9 +17,10 @@ public sealed class StateMachine<T>
     private float stateDurationTime = 0.0f;
     public float getStateDurationTime => stateDurationTime;
 
-    public StateMachine(T stateMachineClass,State<T> initState)
+    public StateMachine(T stateMachineClass, State<T> initState)
     {
         this.stateMachineClass = stateMachineClass;
+
         AddStateList(initState);
         nowState = initState;
         nowState.OnStart();
@@ -47,7 +48,6 @@ public sealed class StateMachine<T>
         stateDurationTime = 0.0f;
 
         return nowState as Q;
-
     }
 
     public void OnUpdate(float deltaTime)

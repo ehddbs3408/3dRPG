@@ -6,23 +6,21 @@ using UnityEngine.EventSystems;
 
 public class InputManager
 {
-    public Action keyAction = null;
+    public Action KeyAction = null;
     public Action<Define.MouseEvent> MouseAction = null;
 
     bool _pressed = false;
     public void OnUpdate()
     {
-        if(Input.anyKey && keyAction != null)
-        {
-            keyAction.Invoke();
-        }
+        if (Input.anyKey && KeyAction != null)
+            KeyAction.Invoke();
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
         if(MouseAction != null)
         {
-            if(Input.GetMouseButton(0))
+            if( Input.GetMouseButton(0))
             {
                 MouseAction.Invoke(Define.MouseEvent.Press);
                 _pressed = true;
@@ -30,9 +28,7 @@ public class InputManager
             else
             {
                 if(_pressed)
-                {
                     MouseAction.Invoke(Define.MouseEvent.Click);
-                }
                 _pressed = false;
             }
         }
@@ -40,7 +36,7 @@ public class InputManager
 
     public void Clear()
     {
-        keyAction = null;
+        KeyAction = null;
         MouseAction = null;
     }
 }

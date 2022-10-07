@@ -8,23 +8,24 @@ public class CameraController : MonoBehaviour
     Define.CameraMode _mode = Define.CameraMode.QuarterView;
 
     [SerializeField]
-    Vector3 _delta = new Vector3(0.0f, 6.0f, -0.5f);
+    Vector3 _delta = new Vector3(0.0f, 6.0f, -5.0f);
 
     [SerializeField]
     GameObject _player = null;
 
     int _mask = (1 << (int)Define.Layer.Block);
 
-    private void Update()
+    void Start()
     {
-
+        
     }
-    private void LateUpdate()
+
+    void LateUpdate()
     {
-        if (_mode == Define.CameraMode.QuarterView)
+        if( _mode == Define.CameraMode.QuarterView)
         {
             RaycastHit hit;
-            if(Physics.Raycast(_player.transform.position,_delta,out hit,_delta.magnitude,_mask))
+            if (Physics.Raycast(_player.transform.position, _delta, out hit, _delta.magnitude, _mask))
             {
                 float dist = (hit.point - _player.transform.position).magnitude * 0.8f;
                 transform.position = _player.transform.position + _delta.normalized * dist;
@@ -34,7 +35,6 @@ public class CameraController : MonoBehaviour
                 transform.position = _player.transform.position + _delta;
                 transform.LookAt(_player.transform);
             }
-
-        }
+        }        
     }
 }
