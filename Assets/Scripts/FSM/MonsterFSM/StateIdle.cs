@@ -57,5 +57,9 @@ public class stateIdle : State<MonsterFSM>
         {
             stateMachine.ChangeState<stateRomming>();
         }
+        else if(stateMachineClass.TiredPoint >= stateMachineClass.SleepTime)
+        {
+            stateMachine.ChangeState<stateSleep>();
+        }
     }
 }

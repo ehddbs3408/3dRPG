@@ -46,6 +46,8 @@ public class stateRomming : State<MonsterFSM>
 
     public override void OnUpdate(float deltaTime)
     {
+        stateMachineClass.TiredPoint += stateMachineClass.TiredIncrement * deltaTime;
+
         Transform target = monsterFSM.SearchEnemy();
         if (target)
         {
@@ -76,6 +78,7 @@ public class stateRomming : State<MonsterFSM>
             }
         }
     }
+
 
     public override void OnEnd()
     {

@@ -103,7 +103,17 @@ public class PlayerController : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Space))
-            Managers.UI.ShowPopupUI<UI_Button>();
+        {
+            anim.SetTrigger("Jump");
+        }
+
+        bool run = false;
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            run = true;
+        }
+        anim.SetBool("Run", run);
+            //Managers.UI.ShowPopupUI<UI_Button>();
 
         if (Input.GetKeyDown(KeyCode.V))
             Managers.UI.ClosePopupUI();

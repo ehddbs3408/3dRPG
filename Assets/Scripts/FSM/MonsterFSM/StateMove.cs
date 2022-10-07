@@ -29,6 +29,8 @@ public class stateMove : State<MonsterFSM>
 
     public override void OnUpdate(float deltaTime)
     {
+        stateMachineClass.TiredPoint += stateMachineClass.TiredIncrement * deltaTime;
+
         Transform target = stateMachineClass.SearchEnemy();
 
         if( target )
