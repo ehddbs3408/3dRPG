@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: e52be2fa48716194ea1d9d76686005f8
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -1866,14 +1866,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.8485714
-        functionName: OnWalkEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1
@@ -2190,11 +2183,13 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -2204,6 +2199,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
@@ -3301,8 +3299,7 @@ ModelImporter:
     - name: J_L_Sode_B01
       parentName: 
       position: {x: -0.1508727, y: 0.00000038190356, z: -0.00000001641671}
-      rotation: {x: -0.0000000060774648, y: -1.5921255e-10, z: 0.000000028037094,
-        w: 1}
+      rotation: {x: -0.0000000060774648, y: -1.5921255e-10, z: 0.000000028037094, w: 1}
       scale: {x: 1.0000007, y: 0.9999999, z: 1}
     - name: J_L_Sode_C00
       parentName: 
@@ -3312,8 +3309,7 @@ ModelImporter:
     - name: J_L_Sode_C01
       parentName: 
       position: {x: -0.1628785, y: 0.00000025815183, z: 0.0000009559523}
-      rotation: {x: -0.000000025464301, y: -0.00000009846964, z: 0.00000001646846,
-        w: 1}
+      rotation: {x: -0.000000025464301, y: -0.00000009846964, z: 0.00000001646846, w: 1}
       scale: {x: 0.9999993, y: 0.9999998, z: 1}
     - name: J_L_Sode_D00
       parentName: 
@@ -3323,8 +3319,7 @@ ModelImporter:
     - name: J_L_Sode_D01
       parentName: 
       position: {x: -0.14457083, y: -0.00081657455, z: -0.007399088}
-      rotation: {x: 0.000000019704212, y: 0.0000000027913694, z: -0.000000025130198,
-        w: 1}
+      rotation: {x: 0.000000019704212, y: 0.0000000027913694, z: -0.000000025130198, w: 1}
       scale: {x: 1.0000005, y: 1.0000002, z: 0.99999964}
     - name: Character1_Neck
       parentName: 
@@ -3509,8 +3504,7 @@ ModelImporter:
     - name: J_R_HairTail_06
       parentName: 
       position: {x: -0.15477698, y: 0.00000034987679, z: -0.00000026781552}
-      rotation: {x: -0.00000006306941, y: -0.000000087244565, z: 0.000000058631894,
-        w: 1}
+      rotation: {x: -0.00000006306941, y: -0.000000087244565, z: 0.000000058631894, w: 1}
       scale: {x: 1.0000004, y: 0.99999917, z: 1.0000015}
     - name: J_R_HeadRibbon_00
       parentName: 
@@ -3660,8 +3654,7 @@ ModelImporter:
     - name: J_R_Sode_A01
       parentName: 
       position: {x: -0.14900704, y: -0.013332278, z: 0.0072456114}
-      rotation: {x: -0.00000008599816, y: 0.00000004082857, z: 0.000000020242934,
-        w: 1}
+      rotation: {x: -0.00000008599816, y: 0.00000004082857, z: 0.000000020242934, w: 1}
       scale: {x: 1.000001, y: 1.0000013, z: 1.0000007}
     - name: J_R_Sode_B00
       parentName: 
@@ -3681,8 +3674,7 @@ ModelImporter:
     - name: J_R_Sode_C01
       parentName: 
       position: {x: -0.16287814, y: 0.00000026871155, z: -0.0000010011196}
-      rotation: {x: 0.000000011084225, y: -0.00000001791107, z: -0.000000020239503,
-        w: 1}
+      rotation: {x: 0.000000011084225, y: -0.00000001791107, z: -0.000000020239503, w: 1}
       scale: {x: 1.0000006, y: 0.99999994, z: 1.0000006}
     - name: J_R_Sode_D00
       parentName: 
@@ -3692,8 +3684,7 @@ ModelImporter:
     - name: J_R_Sode_D01
       parentName: 
       position: {x: -0.14476322, y: 0.0000006339888, z: 0.000000025339434}
-      rotation: {x: 0.0000000017122714, y: -0.0000000021080668, z: 0.00000002634717,
-        w: 1}
+      rotation: {x: 0.0000000017122714, y: -0.0000000021080668, z: 0.00000002634717, w: 1}
       scale: {x: 1.0000005, y: 1.0000006, z: 0.99999905}
     - name: J_Mune_root_00
       parentName: 
@@ -3942,6 +3933,7 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -7,7 +7,6 @@ public class MonsterFSM : MonoBehaviour
     private StateMachine<MonsterFSM> fsmManager;
     public StateMachine<MonsterFSM> FsmManager => fsmManager;
 
-
     private FieldOfView fov;
 
     public Transform target => fov.FirstTarget;
@@ -18,7 +17,7 @@ public class MonsterFSM : MonoBehaviour
     public Transform posTarget = null;  // 현재의 로밍 위치
     private int posTargetIdx = 0;
 
-    //피곤도 관련
+    // 피곤도 관련 함수
     public float TiredPoint { get; set; } = 0;
     public float TiredIncrement { get; } = 3.0f;
     public float SleepTime { get; } = 50.0f;
@@ -42,19 +41,17 @@ public class MonsterFSM : MonoBehaviour
 
         fsmManager = new StateMachine<MonsterFSM>(this, new stateRomming());
 
-        stateIdle stateIdle = new stateIdle();
-        stateIdle.isRomming = true;
-        fsmManager.AddStateList(stateIdle);
+        //stateIdle stateIdle = new stateIdle();
+        //stateIdle.isRomming = true;
+        //fsmManager.AddStateList(stateIdle);
         fsmManager.AddStateList(new stateMove());
         fsmManager.AddStateList(new stateAttack());
-        fsmManager.AddStateList(new stateSleep());
     }
 
     void Update()
     {
         fsmManager.OnUpdate(Time.deltaTime);
     }
-   
 
     void OnHitEvent()
     {
