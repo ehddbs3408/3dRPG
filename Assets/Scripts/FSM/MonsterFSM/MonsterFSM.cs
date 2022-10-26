@@ -11,6 +11,9 @@ public class MonsterFSM : MonoBehaviour
 
     public Transform target => fov.FirstTarget;
 
+    protected UnityEngine.AI.NavMeshAgent agent;
+    protected Animator animator;
+
     public float attackRange;           // 공격 범위
 
     public Transform[] posTargets;      // 로밍할 위치들    
@@ -35,7 +38,7 @@ public class MonsterFSM : MonoBehaviour
         }
     }
 
-    void Start()
+    protected virtual void Start()
     {
         fov = GetComponent<FieldOfView>();
 
@@ -44,7 +47,7 @@ public class MonsterFSM : MonoBehaviour
         fsmManager.AddStateList(new stateAttack());
     }
 
-    void Update()
+    protected virtual void Update()
     {
         fsmManager.OnUpdate(Time.deltaTime);
     }
