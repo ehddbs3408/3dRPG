@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ff1493d904d9b954c800c3382e8ef094
 ModelImporter:
-  serializedVersion: 20300
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
@@ -59,7 +59,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.45820433
+      - time: 0.5036589
         functionName: OnCheckAttackCollider
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -881,7 +881,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

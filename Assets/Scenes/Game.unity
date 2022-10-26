@@ -13374,6 +13374,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 409632, guid: 471c1eb32c770a54ea8a1c3ffbda1de6, type: 3}
   m_PrefabInstance: {fileID: 341632071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1064285091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4108928083794745165, guid: 21f32f517980bc242924f38b807a5c49, type: 3}
+  m_PrefabInstance: {fileID: 80186269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064285092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064285091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abaec437e476c044a54e8556b0627d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1064285099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4108928083794447213, guid: 21f32f517980bc242924f38b807a5c49, type: 3}
+  m_PrefabInstance: {fileID: 80186269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064285100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064285091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b766768f898fdd4095be2a28b949b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniMotionIdx: 0
+  importanceAttackNo: 0
+  attackDamage: 2
+  attackRange: 2
+  attackCoolTime: 2
+  attackEffectPrefab: {fileID: 0}
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  collisionMeleeAttack: {fileID: 1912450169}
 --- !u!1 &1076838912
 GameObject:
   m_ObjectHideFlags: 0
@@ -19409,6 +19453,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 434046, guid: 21919ccc92a1bc445a9e67167e6ad9bd, type: 3}
   m_PrefabInstance: {fileID: 1903628586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912450168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912450170}
+  - component: {fileID: 1912450169}
+  m_Layer: 0
+  m_Name: MeleeAttackCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1912450169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912450168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45988733e0b731489fa785656bde8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxSize: {x: 2, y: 2, z: 2}
+--- !u!4 &1912450170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912450168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1064285099}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1922022489
 PrefabInstance:
   m_ObjectHideFlags: 0
